@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//PAGE HOME
-Route::get('/', function () {
-    return view('home');
-});
+//PAGE HOME (NEWS FEED PUBLIC)
+Route::get('/', 'App\Http\Controllers\NewsFeedController@publicFeed');
 
 
 //INSCRIPTION
