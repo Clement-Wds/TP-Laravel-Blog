@@ -23,4 +23,7 @@ Route::post('/inscription', 'App\Http\Controllers\InscriptionController@createUs
 
 //CONNEXION
 Route::get('/connexion', 'App\Http\Controllers\ConnexionController@form');
-Route::post('/connexion', 'App\Http\Controllers\ConnexionController@createUser');
+Route::post('/connexion', 'App\Http\Controllers\ConnexionController@connexion');
+
+//DECONNEXION
+Route::get('/signout', 'App\Http\Controllers\UserAccountController@signout');

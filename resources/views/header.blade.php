@@ -13,9 +13,25 @@
                     <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/inscription') }}">Inscription</a>
-                </li>
+                @if(auth()->guest())
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/inscription') }}">Inscription</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/connexion') }}">Connexion</a>
+                    </li>
+
+                @else
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/signout') }}">Déconnexion</a>
+                    </li>
+
+                @endif
+
+                
             </ul>
         </div>
     </div>

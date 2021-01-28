@@ -27,6 +27,6 @@ class InscriptionController extends Controller
         ]);
 
         flash('Votre compte a été créer avec succès')->success();
-        //return redirect('/connexion');
+        return redirect('/connexion');
     }
 }
