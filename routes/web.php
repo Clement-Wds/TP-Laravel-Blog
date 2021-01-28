@@ -49,3 +49,8 @@ Route::get('/delete_profile','App\Http\Controllers\UserController@deleteUser');
 //PROFIL PUBLIC
 Route::get('/users', 'App\Http\Controllers\UserController@listUsers');
 Route::get('/users/profile/{id}', 'App\Http\Controllers\UserController@publicProfile')->name('profile.User');
+
+
+//GESTION DES POSTS
+Route::get('/create_post', 'App\Http\Controllers\PostController@formCreatePost');
+Route::post('/new_post','App\Http\Controllers\PostController@createPost');
