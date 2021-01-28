@@ -54,6 +54,20 @@
         
         <div class="col-md-6">
             <h1>Mes Publications</h1>
+            @foreach($post as $posts)
+                @if($posts->user_id == $user->id)
+                    <div class="card" style="width: 25rem;">
+                        <img src="{{ $posts->photo }}" class="card-img-top" alt="Photo de la publication">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $posts->title }}</h5>
+                            <p class="card-text">{{ $posts->content }}</p>
+                            <a href="{{ route('edit.Post', ['id' => $posts->id]) }}" class="btn btn-primary">Modifier</a>
+                            <a href="{{ route('delete.Post', ['id' => $posts->id]) }}" class="btn btn-danger">Supprimer</a>
+                        </div>
+                    </div>
+                    <br>
+                @endif            
+            @endforeach
         </div>
     </div>
 </div>

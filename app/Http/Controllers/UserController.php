@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User as User;
+use App\Models\Post as Post;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,8 +11,10 @@ class UserController extends Controller
     public function formProfile(){
         if(auth()->check()){
             $user = auth()->user();
+            $post = Post::all();
             return view('/user/profile', [
-                'user' => $user
+                'user' => $user,
+                'post' => $post
             ]);
         }
         flash('Vous devez être connectés pour accéder à cette page !')->error();

@@ -54,3 +54,6 @@ Route::get('/users/profile/{id}', 'App\Http\Controllers\UserController@publicPro
 //GESTION DES POSTS
 Route::get('/create_post', 'App\Http\Controllers\PostController@formCreatePost');
 Route::post('/new_post','App\Http\Controllers\PostController@createPost');
+Route::get('/edit_post/{id}', 'App\Http\Controllers\PostController@formEditPost')->name('edit.Post');
+Route::post('/edit_post/{id}/send', 'App\Http\Controllers\PostController@editPost');
+Route::get('/delete_post/{id}', 'App\Http\Controllers\PostController@deletePost')->name('delete.Post');
