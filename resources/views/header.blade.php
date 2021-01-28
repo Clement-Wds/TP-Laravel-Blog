@@ -12,6 +12,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/inscription') }}">Inscription</a>
+                </li>
             </ul>
         </div>
     </div>
