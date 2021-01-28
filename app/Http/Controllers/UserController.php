@@ -75,6 +75,7 @@ class UserController extends Controller
     public function deleteUser(){
         $user = auth()->user();
         $user->delete();
+        
         flash('Votre profil a bien été supprimé - Vous pouvez seulement consulter les restaurants et leurs plats - Créez un compte pour pouvoir commander des plats');
         return redirect('/');
     }
