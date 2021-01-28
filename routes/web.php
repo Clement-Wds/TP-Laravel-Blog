@@ -27,3 +27,17 @@ Route::post('/connexion', 'App\Http\Controllers\ConnexionController@connexion');
 
 //DECONNEXION
 Route::get('/signout', 'App\Http\Controllers\UserAccountController@signout');
+
+//PROFIL UTILISATEUR
+Route::get('/profile', 'App\Http\Controllers\UserController@formProfile');
+
+//Edition du Profil
+Route::get('/edit_profile', 'App\Http\Controllers\UserController@formEditProfile');
+Route::post('/edit_profile', 'App\Http\Controllers\UserController@editProfile');
+
+//Modification du mot de passe
+Route::get('/change_password', 'App\Http\Controllers\UserController@formChangePassword');
+Route::post('/change_password', 'App\Http\Controllers\UserController@changePassword');
+
+//Suppression du profil
+Route::get('/delete_profile','App\Http\Controllers\UserController@deleteUser');
