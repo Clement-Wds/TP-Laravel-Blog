@@ -9,10 +9,7 @@
   
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">Home</a>
-                </li>
-
+                
                 @if(auth()->guest())
 
                     <li class="nav-item">
@@ -26,7 +23,15 @@
                 @else
 
                     <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="{{ url('/create_post') }}">Créer un Post</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/profile') }}">Mon Compte</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/users') }}">Utilisateurs</a>
                     </li>
 
                     <li class="nav-item">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User as User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -75,8 +76,30 @@ class UserController extends Controller
     public function deleteUser(){
         $user = auth()->user();
         $user->delete();
-        
+
         flash('Votre profil a bien été supprimé - Vous pouvez seulement consulter les restaurants et leurs plats - Créez un compte pour pouvoir commander des plats');
         return redirect('/');
+    }
+
+    public function listUsers(){
+        if(auth()->check()){
+            $users = User::all();
+            return view('user/listUsers', [
+                'users' => $users
+            ]);
+        }
+        flash('Vous devez être connectés pour accéder à cette page !')->error();
+        return redirect('/connexion');
+    }
+
+    public function publicProfile(int $id){
+        if(auth()->check()){
+            $user = User::all()->where('id', $id)->first();
+            return view('user/publicProfile', [
+                'user' => $user
+            ]);
+        }
+        flash('Vous devez être connecté pour accéder à cette page')->eror();
+        return redirect('/connexion');
     }
 }
